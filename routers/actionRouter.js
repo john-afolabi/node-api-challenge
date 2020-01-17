@@ -8,7 +8,7 @@ actionRouter.get("/:id", validateActionId, (req, res) => {
   res.status(200).json(res.action);
 });
 
-actionRouter.post("/", validateProjectID, validatePostData, (req, res) => {
+actionRouter.post("/", validatePostData, (req, res) => {
   const newAction = req.body;
   insert(newAction)
     .then(data => {
@@ -30,7 +30,7 @@ actionRouter.put("/:id", validateActionId, validatePostData, (req, res) => {
     .catch(error => {
       res
         .status(500)
-        .json({ errorMessage: "Unable to add new action at this time" });
+        .json({ errorMessage: "Unable to edit action at this time" });
     });
 });
 
