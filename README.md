@@ -38,15 +38,34 @@ Commit your code regularly and use descriptive messages. This helps both you (in
 
 Demonstrate your understanding of this Sprint's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your Team Lead.
 
-- [ ] Mention two parts of Express that you learned about this week.
+- [x] Mention two parts of Express that you learned about this week.
+    
+    - We learnt about the importance of middlewares and deploying a monolith express and react application to heroku
 
-- [ ] Describe Middleware?
+- [x] Describe Middleware?
 
-- [ ] Describe a Resource?
+    - A middleware is a funtion that runs during a request to a server and the response. They have access to the request object, response object and next function.
 
-- [ ] What can the API return to help clients know if a request was successful?
+    Express is compromised of middleware functions
 
-- [ ] How can we partition our application into sub-applications?
+
+- [x] Describe a Resource?
+
+    - A resource is where files are stored or a server
+
+
+
+- [x] What can the API return to help clients know if a request was successful?
+
+    - The API returns HTTP status codes and responses
+
+
+
+- [x] How can we partition our application into sub-applications?
+
+    - We can partition our application into sub-applications by making use of routing in express
+
+
 
 ## Minimum Viable Product
 
