@@ -4,6 +4,18 @@ const projectModel = require("../data/helpers/projectModel");
 
 const actionRouter = express.Router();
 
+actionRouter.get("/", (req, res) => {
+  get()
+    .then(actions => {
+      res.status(200).json(actions);
+    })
+    .catch(error => {
+      res
+        .status(500)
+        .json({ errorMessage: "Actions cannot be retrieved at this time" });
+    });
+});
+
 actionRouter.get("/:id", validateActionId, (req, res) => {
   res.status(200).json(res.action);
 });
@@ -47,8 +59,6 @@ actionRouter.delete("/:id", validateActionId, (req, res) => {
       });
     });
 });
-
-
 
 // -------------------------------
 // MIDDLEWARES

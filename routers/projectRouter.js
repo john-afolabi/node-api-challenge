@@ -9,6 +9,18 @@ const {
 
 const projectRouter = express.Router();
 
+projectRouter.get("/", (req, res) => {
+  get()
+    .then(projects => {
+      res.status(200).json(projects);
+    })
+    .catch(error => {
+      res
+        .status(500)
+        .json({ errorMessage: "Projects cannot be retrieved at this time" });
+    });
+});
+
 projectRouter.get("/:id", validateProjectId, (req, res) => {
   res.status(200).json(req.project);
 });
